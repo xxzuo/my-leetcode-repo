@@ -34,7 +34,16 @@
       //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxSubArray(int[] nums) {
+        int[] dp = new int[nums.length];
 
+        dp[0] = nums[0];
+        int res = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
+            res = Math.max(dp[i], res);
+        }
+
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
