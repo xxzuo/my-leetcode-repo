@@ -74,6 +74,7 @@ class Solution {
         while (len > 1){
             int newLen = (len + 1) / 2;
             for(int i = 0;i < len / 2; i++){
+                // 两两合并
                 if((i + newLen) < len){
                     lists[i] = merge2List(lists[i], lists[i + newLen]);
                 }
